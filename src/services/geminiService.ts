@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+// import { GoogleGenerativeAI } from '@google/generative-ai' // Not used in current implementation;
 import { PromptResult, ApiKeyTestResult } from '../types';
 
 // Test API key

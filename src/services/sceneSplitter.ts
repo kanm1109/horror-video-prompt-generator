@@ -214,8 +214,7 @@ function autoSplitLongScenes(
           startTime: (sceneNumber - 1) * sceneDuration,
           endTime: sceneNumber * sceneDuration,
           duration: sceneDuration,
-          scriptText: part1,
-          note: scene.note ? `${scene.note} (Part 1)` : undefined
+          scriptText: part1
         })
         
         result.push({
@@ -223,8 +222,7 @@ function autoSplitLongScenes(
           startTime: (sceneNumber - 1) * sceneDuration,
           endTime: sceneNumber * sceneDuration,
           duration: sceneDuration,
-          scriptText: part2,
-          note: scene.note ? `${scene.note} (Part 2)` : undefined
+          scriptText: part2
         })
         
         splitCount++

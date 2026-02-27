@@ -259,7 +259,7 @@ export default function SceneCard({ scene, onEdit, onRegenerate, onDelete, onGen
                 </button>
               </div>
               <p className="text-horror-ghostly text-xs leading-relaxed">
-                {scene.prompt.prompt}
+                {scene.prompt?.prompt || 'N/A'}
               </p>
             </div>
 
@@ -267,26 +267,26 @@ export default function SceneCard({ scene, onEdit, onRegenerate, onDelete, onGen
             <div className="grid grid-cols-2 gap-2">
               <div className="bg-horror-dark rounded p-2">
                 <label className="text-xs font-semibold text-horror-bloodLight block mb-1">Style:</label>
-                <p className="text-horror-ghostly text-xs">{scene.prompt.style}</p>
+                <p className="text-horror-ghostly text-xs">{scene.prompt?.style || 'N/A'}</p>
               </div>
               <div className="bg-horror-dark rounded p-2">
                 <label className="text-xs font-semibold text-horror-bloodLight block mb-1">Mood:</label>
-                <p className="text-horror-ghostly text-xs">{scene.prompt.mood}</p>
+                <p className="text-horror-ghostly text-xs">{scene.prompt?.mood || 'N/A'}</p>
               </div>
               <div className="bg-horror-dark rounded p-2">
                 <label className="text-xs font-semibold text-horror-bloodLight block mb-1">Camera:</label>
-                <p className="text-horror-ghostly text-xs">{scene.prompt.camera}</p>
+                <p className="text-horror-ghostly text-xs">{scene.prompt?.camera || 'N/A'}</p>
               </div>
               <div className="bg-horror-dark rounded p-2">
                 <label className="text-xs font-semibold text-horror-bloodLight block mb-1">Lighting:</label>
-                <p className="text-horror-ghostly text-xs">{scene.prompt.lighting}</p>
+                <p className="text-horror-ghostly text-xs">{scene.prompt?.lighting || 'N/A'}</p>
               </div>
             </div>
 
             {/* Sound Suggestion */}
             <div className="bg-horror-dark rounded p-2">
               <label className="text-xs font-semibold text-horror-bloodLight block mb-1">Sound:</label>
-              <p className="text-horror-ghostly text-xs">{scene.prompt.soundSuggestion}</p>
+              <p className="text-horror-ghostly text-xs">{scene.prompt?.soundSuggestion || 'N/A'}</p>
             </div>
           </div>
         )}
@@ -294,7 +294,7 @@ export default function SceneCard({ scene, onEdit, onRegenerate, onDelete, onGen
         {/* Collapsed Preview */}
         {!isExpanded && hasPrompt && (
           <div className="mt-2 text-xs text-horror-ghostly/50 line-clamp-1">
-            → {scene.prompt.prompt}
+            → {scene.prompt?.prompt || ''}
           </div>
         )}
       </div>

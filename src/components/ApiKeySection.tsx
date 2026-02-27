@@ -29,10 +29,10 @@ export default function ApiKeySection({ onSubmit }: Props) {
     try {
       // If user selected a specific model, save it
       if (selectedModel !== 'auto') {
-        (window as any).__workingGeminiModel = selectedModel
-        (window as any).__userSelectedModel = true
+        (window as any).__workingGeminiModel = selectedModel;
+        (window as any).__userSelectedModel = true;
       } else {
-        (window as any).__userSelectedModel = false
+        (window as any).__userSelectedModel = false;
       }
       
       const result = await testApiKey(apiKey)
