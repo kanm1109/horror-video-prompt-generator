@@ -1,0 +1,41 @@
+# KỊCH BẢN MẪU - TEST LONG SCRIPT MODE
+# Độ dài: ~2000 ký tự
+# Scenes dự kiến: 8-10 scenes
+
+---
+
+CÂU CHUYỆN MA NHÀ HOANG
+
+Cảnh mở đầu: Một ngôi nhà hoang giữa khu rừng rậm. Trời tối mịt, chỉ có ánh trăng mờ chiếu qua tán cây. Sương mù bao phủ khắp nơi, tạo cảm giác lạnh lẽo và bí ẩn.
+
+Camera từ từ tiến gần đến cửa chính của ngôi nhà. Cánh cửa gỗ cũ kỹ, sơn bong tróc, có vẻ đã bỏ hoang nhiều năm. Tiếng cọt kẹt vang lên khi gió thổi qua.
+
+Bên trong ngôi nhà, hành lang tối tăm. Chỉ có ánh nến le lói từ phòng khách xa xa. Tường sơn bong tróc, giấy dán tường rách nát. Bóng tối len lỏi ở mọi góc.
+
+Camera zoom vào phòng khách. Giữa phòng có một chiếc ghế bành cổ, trên ghế ngồi một con búp bê cũ. Đôi mắt búp bê như nhìn thẳng vào camera, tạo cảm giác rợn người.
+
+Đột ngột, ngọn nến nhấp nháy rồi tắt ngấm. Phòng chìm trong bóng tối hoàn toàn. Chỉ còn tiếng gió rít qua khe cửa sổ.
+
+Tiếng bước chân từ từ vang lên ở tầng hai. Từng bước một, đều đặn, đang đi xuống cầu thang. Tiếng gỗ cọt kẹt theo mỗi bước chân.
+
+Ở góc hành lang, một bóng đen dần hiện ra từ trong bóng tối. Bóng người cao lớn, di chuyển chậm rãi, không có hình dạng rõ ràng.
+
+Camera quay nhanh về phía cửa ra. Ánh trăng chiếu vào tạo một đường sáng mờ ảo. Cửa từ từ đóng lại, kẹt một tiếng "bình" vang vọng.
+
+Màn hình đen. Chỉ còn tiếng thở hổn hển và tiếng tim đập mạnh. Sau đó, một tiếng la thất thanh vang lên rồi... im lặng.
+
+Kết thúc với cận cảnh đôi mắt búp bê trong bóng tối, dường như đang cười một nụ cười ma quái.
+
+---
+
+# HƯỚNG DẪN SỬ DỤNG:
+
+1. Copy toàn bộ kịch bản trên
+2. Mở app → Tab "Kịch Bản Dài"
+3. Paste vào ô "Kịch Bản Đầy Đủ"
+4. Click "Chia Thành Scenes"
+5. Xem AI chia thành bao nhiêu scenes
+6. Click "Tạo Tất Cả Prompts"
+7. Đợi hoàn tất và export JSON!
+
+Expected output: 8-10 scenes, mỗi scene 5 giây = video 40-50 giây tổng cộng.
