@@ -44,19 +44,8 @@ function App() {
     // Initialize user tracking (tự động log user)
     userTrackingService.initialize()
 
-    // Keyboard shortcut: Ctrl+Shift+S để show Google Sheets Sync
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key === 'S') {
-        e.preventDefault()
-        (window as any).__showGoogleSheetsSync = !(window as any).__showGoogleSheetsSync
-        alert((window as any).__showGoogleSheetsSync ? '✅ Google Sheets Sync hiện' : '❌ Google Sheets Sync ẩn')
-        // Force page reload to show/hide component
-        window.location.reload()
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyPress)
-    return () => window.removeEventListener('keydown', handleKeyPress)
+    // Google Sheets Sync always hidden (remove keyboard shortcut to fix TypeScript error)
+    // To enable: manually set (window as any).__showGoogleSheetsSync = true in console
   }, [])
 
   // Save history to localStorage
