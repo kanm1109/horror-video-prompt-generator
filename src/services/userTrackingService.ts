@@ -14,8 +14,8 @@ interface UserLog {
 }
 
 class UserTrackingService {
-  private readonly SHEET_ID = 'YOUR_SHEET_ID_HERE'; // Thay bằng Sheet ID của bạn
-  private readonly API_KEY = 'YOUR_GOOGLE_SHEETS_API_KEY_HERE'; // Thay bằng API Key
+  private readonly SHEET_ID = '1vGltPpOHvqaLlddGM5gDYpCmswJ7lY9Pfg743nkSY0M'; // Tracking Sheet
+  private readonly API_KEY = 'AIzaSyDVXPbUXJmwL9eYcBu7T77XZ54ytRfjymk'; // Google Sheets API
   private readonly LOG_SHEET_NAME = 'UserLogs'; // Tên sheet để log
   private hasLogged = false;
 

