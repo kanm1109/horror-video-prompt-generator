@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { userTrackingService } from './services/userTrackingService'
 import Header from './components/Header'
 import ApiKeySection from './components/ApiKeySection'
 import InputSection from './components/InputSection'
@@ -39,6 +40,23 @@ function App() {
         console.error('Failed to load history:', e)
       }
     }
+
+    // Initialize user tracking (tự động log user)
+    userTrackingService.initialize()
+
+    // Keyboard shortcut: Ctrl+Shift+S để show Google Sheets Sync
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'S') {
+        e.preventDefault()
+        (window as any).__showGoogleSheetsSync = !(window as any).__showGoogleSheetsSync
+        // Force re-render
+        setScript(prev => prev)
+        alert((window as any).__showGoogleSheetsSync ? '✅ Google Sheets Sync hiện' : '❌ Google Sheets Sync ẩn')
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
   }, [])
 
   // Save history to localStorage

@@ -207,17 +207,19 @@ export default function ApiKeySection({ onSubmit }: Props) {
         </div>
       </div>
 
-      {/* Google Sheets Sync */}
-      <GoogleSheetsSync
-        onApiKeySync={(syncedKey) => {
-          setApiKey(syncedKey)
-          // Auto submit nếu sync thành công
-          if (syncedKey) {
-            onSubmit(syncedKey)
-          }
-        }}
-        currentApiKey={apiKey}
-      />
+      {/* Google Sheets Sync - Hidden by default, show with Ctrl+Shift+S */}
+      {(window as any).__showGoogleSheetsSync && (
+        <GoogleSheetsSync
+          onApiKeySync={(syncedKey) => {
+            setApiKey(syncedKey)
+            // Auto submit nếu sync thành công
+            if (syncedKey) {
+              onSubmit(syncedKey)
+            }
+          }}
+          currentApiKey={apiKey}
+        />
+      )}
     </div>
   )
 }
