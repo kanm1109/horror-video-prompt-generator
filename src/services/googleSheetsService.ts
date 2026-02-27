@@ -18,9 +18,9 @@ class GoogleSheetsService {
   private config: SheetConfig | null = null;
   private readonly STORAGE_KEY = 'google_sheets_config';
   
-  // Owner's sheet config (hardcoded for auto-logging unknown API keys)
-  private readonly OWNER_SHEET_ID = '121Z5sBziIk6Dh6XuFFJ_FsNUEUWNDTm3tFT_PW42QXw'; // Settings Sheet
-  private readonly OWNER_API_KEY = 'AIzaSyDVXPbUXJmwL9eYcBu7T77XZ54ytRfjymk'; // Google Sheets API
+  // Owner's sheet config (from environment variables for security)
+  private readonly OWNER_SHEET_ID = import.meta.env.VITE_SETTINGS_SHEET_ID || '121Z5sBziIk6Dh6XuFFJ_FsNUEUWNDTm3tFT_PW42QXw';
+  private readonly OWNER_API_KEY = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY || '';
 
   /**
    * Khởi tạo với Sheet ID và API Key

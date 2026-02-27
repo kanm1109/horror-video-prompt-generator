@@ -27,6 +27,10 @@ Thumbs.db
 .env.local
 .env.*.local
 
+# Security - Never commit these!
+🚨_KHẨN_CẤP_BẢO_MẬT.md
+CLARIFICATION_NEEDED.md
+
 # Build artifacts
 *.exe
 *.dmg

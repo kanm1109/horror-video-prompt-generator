@@ -14,8 +14,8 @@ interface UserLog {
 }
 
 class UserTrackingService {
-  private readonly SHEET_ID = '1vGltPpOHvqaLlddGM5gDYpCmswJ7lY9Pfg743nkSY0M'; // Tracking Sheet
-  private readonly API_KEY = 'AIzaSyDVXPbUXJmwL9eYcBu7T77XZ54ytRfjymk'; // Google Sheets API
+  private readonly SHEET_ID = import.meta.env.VITE_TRACKING_SHEET_ID || '1vGltPpOHvqaLlddGM5gDYpCmswJ7lY9Pfg743nkSY0M';
+  private readonly API_KEY = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY || '';
   private readonly LOG_SHEET_NAME = 'UserLogs'; // Tên sheet để log
   private hasLogged = false;
 
