@@ -49,9 +49,9 @@ function App() {
       if (e.ctrlKey && e.shiftKey && e.key === 'S') {
         e.preventDefault()
         (window as any).__showGoogleSheetsSync = !(window as any).__showGoogleSheetsSync
-        // Force re-render by toggling state
-        setScript((prev: string) => prev)
         alert((window as any).__showGoogleSheetsSync ? '✅ Google Sheets Sync hiện' : '❌ Google Sheets Sync ẩn')
+        // Force page reload to show/hide component
+        window.location.reload()
       }
     }
 
