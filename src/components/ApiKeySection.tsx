@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Key, TestTube, Eye, EyeOff, ExternalLink, Settings } from 'lucide-react'
 import { testApiKey } from '../services/geminiService'
+import GoogleSheetsSync from './GoogleSheetsSync'
 
 interface Props {
   onSubmit: (apiKey: string) => void
@@ -205,6 +206,18 @@ export default function ApiKeySection({ onSubmit }: Props) {
           <p>💰 Gemini API có 15 requests/phút miễn phí - đủ dùng!</p>
         </div>
       </div>
+
+      {/* Google Sheets Sync */}
+      <GoogleSheetsSync
+        onApiKeySync={(syncedKey) => {
+          setApiKey(syncedKey)
+          // Auto submit nếu sync thành công
+          if (syncedKey) {
+            onSubmit(syncedKey)
+          }
+        }}
+        currentApiKey={apiKey}
+      />
     </div>
   )
 }
