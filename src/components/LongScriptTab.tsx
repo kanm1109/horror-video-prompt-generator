@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FileText, Scissors, Wand2, Download, FileSpreadsheet, Gauge, Save, FolderOpen, Image as ImageIcon } from 'lucide-react'
-import { Scene, LongScriptProject, ReadingSpeed } from '../types/longScript'
+import { Scene, ReadingSpeed } from '../types/longScript'
 import { splitScriptIntoScenes, formatTime, READING_SPEED_CONFIGS } from '../services/sceneSplitter'
 import { generatePrompt, generateImage } from '../services/geminiService'
 import { downloadTimeline, exportToTimeline, downloadCSV, downloadTXT, saveProject, loadProjectFromFile } from '../services/timelineExporter'
